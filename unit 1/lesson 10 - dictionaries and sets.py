@@ -31,9 +31,18 @@ for i in range(len(text)):
 
 given_string = 'kn1mb9c7c5cv5cc9cvv7cx9sd8nm4cz2bm4k6hf9d'
 unique_digits = set()
+count_letters = 0
+alf = 'abcdefgijklmopqrstuvwxyz'
+alf = alf + alf.upper()
+alf = set(alf)
 for symbol in given_string:
     if ord(symbol) >= 48 and ord(symbol) <=57:
         unique_digits.add(int(symbol))
+    if symbol in alf:
+        count_letters += 1
+
 unique_digits = sorted(list(unique_digits))
 print(unique_digits)
+if count_letters == 0:
+    print('NO')
 #problem5 [1, 2, 4, 5, 6, 7, 8, 9]
